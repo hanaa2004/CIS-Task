@@ -1,0 +1,38 @@
+﻿@model Employee
+@{
+    SelectList dptslist = new SelectList(ViewBag.deptlist,"id","name");
+}
+
+<form method="post" asp-action="savenew" asp-controller="employee">
+    <div asp-validation-summary="All"> </div>
+    <div>
+        <label asp-for="name"></label>
+        <input asp-for="name" class="form form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="age"></label>
+        <input asp-for="age" class="form form-control" />
+        <span asp-validation-for="age" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="salary"></label>
+        <input asp-for="salary" class="form form-control" />
+        <span asp-validation-for="salary" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="address"></label>
+        <input asp-for="address" class="form form-control" />
+        <span asp-validation-for="address" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="dept_id"></label>
+
+        <select asp-for="dept_id" class="form form-control" asp-items="dptslist">
+            
+        </select>
+    </div>
+
+    <span asp-validation-for="dept_id" class="text-danger"></span>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

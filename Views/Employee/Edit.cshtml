@@ -1,0 +1,42 @@
+﻿
+@model Employee
+
+<form method="post" action="/employee/saveedit/@Model.id">
+    <div>
+        <label>NAme</label>
+        <input type="text" name="name" id="name" value="@Model.name" class="form form-control"/>
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="text" name="age" id="age" value="@Model.age" class="form form-control" />
+    </div>
+    <div>
+        <label>Salary</label>
+        <input type="text" name="salary" id="salary" value="@Model.salary" class="form form-control" />
+    </div>
+    <div>
+        <label>Address</label>
+        <input type="text" name="address" id="address" value="@Model.address" class="form form-control" />
+    </div>
+    <div>
+        <label>Dept id</label>
+        
+        <select name="dept_id" id="dept_id" class="form form-control">
+            @foreach (dept deptitem in ViewBag.deptlist)
+            {
+                if (Model.dept_id==deptitem.id)
+                {
+                    <option value="@deptitem.id" selected>@deptitem.name</option>
+                }
+                else 
+                { 
+                    <option value="@deptitem.id" >@deptitem.name</option>
+                };
+                
+            }
+          
+
+        </select>
+    </div>
+    <input type="submit" value="save" />
+</form>

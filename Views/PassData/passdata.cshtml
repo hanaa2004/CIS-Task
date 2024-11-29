@@ -1,0 +1,43 @@
+﻿@model EmployeeWithMessageAndBranchesListViewModel
+@{
+    ViewData["Title"] = "passdata";
+}
+
+<h1>passdata</h1>
+<h1 style="color:@Model.color">@Model.emp_name</h1>
+<br />
+<h2>@Model.message</h2>
+<select class="form-control">
+    @foreach (var item in Model.branches)
+    {
+        <option>@item</option>
+    }
+</select>
+
+
+
+
+
+
+
+@* 
+<table>
+    <tr>Id </tr>
+    <tr>NMAe </tr>
+    <tr>Age </tr>
+    <tr>Salary </tr>
+    <tr>Dept Id </tr>
+
+        @foreach (var item in (List<>)Model)
+        {<tr>
+            <th>@it</th>
+        <th>name</th>
+        <th>age</th>
+        <th>Saalry</th>
+        <th>@item.dept</th>
+            </tr>
+        }
+        
+    
+</table> *@
+

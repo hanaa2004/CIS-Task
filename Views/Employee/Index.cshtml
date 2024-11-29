@@ -1,0 +1,29 @@
+﻿@model List<Employee>
+@{
+    Layout = "_Layout1";
+}
+<table class="table table-bordered table-hover">
+    <th>Id</th>
+    <th>NAme</th>
+    <th>Age</th>
+    <th>Salary</th>
+    <th>dept_id</th>
+    <th>address</th>
+    <th>Edit</th>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.id</th>
+            <th>@item.name</th>
+            <th>@item.age</th>
+            <th>@item.salary</th>
+            <th>@item.dept_id</th>
+            <th>@item.address</th>
+            <th><a href="/employee/edit/@item.id">EDIT</a></th>
+        </tr>
+
+    }
+</table>
+
+<a asp-action="new" asp-controller="employee" class="btn btn-primary" >Add new employee</a>

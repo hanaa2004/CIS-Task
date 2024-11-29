@@ -1,0 +1,26 @@
+﻿@model List<dept>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<table class="table table-bordered table-hover" >
+    <tr>Id</tr>
+    <tr>Name</tr>
+    <tr>Manager Name</tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+        <th>@item.id</th>
+        <th>@item.name</th>
+        <th>@item.manager_name</th>
+        </tr>
+    }
+    </table>
+
+    <br/>
+    <br />
+<a asp-action="new" asp-controller="dept" class="btn btn-primary">Add new</a>
+<a asp-action="remove" asp-controller="dept" class="btn btn-primary">Remove</a>
+
+
